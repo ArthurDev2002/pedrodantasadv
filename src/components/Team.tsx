@@ -1,4 +1,5 @@
 
+import { RevealOnScroll } from './RevealOnScroll';
 
 const teamMembers = [
   {
@@ -35,7 +36,7 @@ const Team = () => {
   return (
     <section id="equipe" className="py-20 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <RevealOnScroll className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-brand-gold font-semibold tracking-wider uppercase text-sm mb-3">
             Nossa Equipe
           </h2>
@@ -45,14 +46,11 @@ const Team = () => {
           <p className="text-lg text-slate-600">
             Trabalhamos em conjunto para analisar minuciosamente cada detalhe do seu caso, unindo expertise e atendimento humanizado.
           </p>
-        </div>
+        </RevealOnScroll>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teamMembers.map((member) => (
-            <div 
-              key={member.id} 
-              className="bg-slate-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group"
-            >
+          {teamMembers.map((member, index) => (
+            <RevealOnScroll key={member.id} delay={(index % 4) + 1} className="bg-slate-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
               {/* Image Container */}
               <div className="relative aspect-square overflow-hidden bg-slate-200">
                 <img 
@@ -79,12 +77,12 @@ const Team = () => {
                   {member.description}
                 </p>
               </div>
-            </div>
+            </RevealOnScroll>
           ))}
         </div>
 
         {/* Full Team Banner */}
-        <div className="mt-16 bg-slate-50 rounded-3xl overflow-hidden shadow-sm border border-slate-100 flex flex-col md:flex-row items-stretch">
+        <RevealOnScroll delay={2} className="mt-16 bg-slate-50 rounded-3xl overflow-hidden shadow-sm border border-slate-100 flex flex-col md:flex-row items-stretch">
           <div className="w-full md:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center text-center md:text-left">
             <h4 className="text-2xl md:text-3xl font-bold text-brand-navy mb-4">
               Unidos por um único propósito: <span className="text-brand-gold">O seu direito.</span>
@@ -100,7 +98,7 @@ const Team = () => {
               className="absolute inset-0 w-full h-full object-cover object-center"
             />
           </div>
-        </div>
+        </RevealOnScroll>
       </div>
     </section>
   );

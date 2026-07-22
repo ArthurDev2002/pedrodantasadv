@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
+import { RevealOnScroll } from './RevealOnScroll';
 
 const FAQ = () => {
   const [openId, setOpenId] = useState<number | null>(0);
@@ -35,7 +36,7 @@ const FAQ = () => {
   return (
     <section id="faq" className="py-20 lg:py-32 bg-slate-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <RevealOnScroll className="text-center mb-16">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-gold/10 text-brand-gold rounded-full mb-6">
             <HelpCircle className="w-8 h-8" />
           </div>
@@ -45,14 +46,11 @@ const FAQ = () => {
           <p className="text-lg text-slate-600">
             Respostas claras para as principais perguntas sobre seus direitos.
           </p>
-        </div>
+        </RevealOnScroll>
 
         <div className="space-y-4">
-          {faqs.map((faq) => (
-            <div 
-              key={faq.id} 
-              className={`bg-white rounded-2xl border transition-all duration-300 ${openId === faq.id ? 'border-brand-gold shadow-md' : 'border-slate-200 shadow-sm hover:border-brand-navy/30'}`}
-            >
+          {faqs.map((faq, index) => (
+            <RevealOnScroll key={faq.id} delay={(index % 4) + 1} className={`bg-white rounded-2xl border transition-all duration-300 ${openId === faq.id ? 'border-brand-gold shadow-md' : 'border-slate-200 shadow-sm hover:border-brand-navy/30'}`}>
               <button
                 onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
                 className="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none"
@@ -72,7 +70,7 @@ const FAQ = () => {
                   {faq.answer}
                 </p>
               </div>
-            </div>
+            </RevealOnScroll>
           ))}
         </div>
       </div>

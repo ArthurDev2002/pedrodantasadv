@@ -13,8 +13,7 @@ const Hero = ({ onOpenQuiz }: HeroProps) => {
         style={{ backgroundImage: "url('/assets/hero.jpg')" }}
       >
         {/* Overlay gradient to ensure text readability */}
-        <div className="absolute inset-0 bg-brand-navy/30 mix-blend-multiply"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/30 to-transparent md:via-brand-navy/10 md:to-transparent"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

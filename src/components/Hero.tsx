@@ -9,7 +9,7 @@ const Hero = ({ onOpenQuiz }: HeroProps) => {
     <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden text-white">
       {/* Background image */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 z-0 bg-cover bg-top bg-no-repeat"
         style={{ backgroundImage: "url('/assets/hero.jpg')" }}
       >
         {/* Overlay gradient to ensure text readability */}

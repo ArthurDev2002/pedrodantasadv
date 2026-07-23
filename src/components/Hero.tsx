@@ -8,31 +8,34 @@ const Hero = ({ onOpenQuiz }: HeroProps) => {
   return (
     <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden text-white">
       {/* Background image */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-[center_70%] bg-no-repeat"
-        style={{ backgroundImage: "url('/assets/hero.jpg')" }}
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-no-repeat"
+        style={{ 
+          backgroundImage: "url('/assets/hero.jpg')",
+          backgroundPosition: "center 80%" 
+        }}
       >
         {/* Overlay gradient to ensure text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/30 to-transparent md:via-brand-navy/10 md:to-transparent"></div>
       </div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-navy/50 border border-brand-gold/30 text-brand-gold text-sm font-medium mb-6 opacity-0 animate-fade-in-up backdrop-blur-sm">
             <ShieldCheck className="w-4 h-4" />
             <span>Especialistas em Direito Previdenciário</span>
           </div>
-          
+
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 opacity-0 animate-fade-in-up-delay-1 drop-shadow-lg">
-            Benefício negado <br/> pelo <span className="text-brand-gold">INSS?</span>
+            Benefício negado <br /> pelo <span className="text-brand-gold">INSS?</span>
           </h1>
-          
+
           <p className="text-lg sm:text-xl text-slate-200 mb-8 leading-relaxed max-w-2xl opacity-0 animate-fade-in-up-delay-1 drop-shadow-md">
             Não desista dos seus direitos. Nossa equipe especializada está pronta para analisar o seu caso e reverter a decisão do INSS. Você não está sozinho nessa luta.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 mb-10 opacity-0 animate-fade-in-up-delay-2">
-            <button 
+            <button
               onClick={onOpenQuiz}
               className="inline-flex justify-center items-center gap-2 bg-brand-gold text-brand-navy px-8 py-4 rounded-lg font-bold text-lg transition-all hover:bg-brand-gold-light hover:scale-105 shadow-lg shadow-brand-gold/20"
             >
@@ -40,7 +43,7 @@ const Hero = ({ onOpenQuiz }: HeroProps) => {
               <ArrowRight className="w-5 h-5" />
             </button>
           </div>
-          
+
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-8 border-t border-white/20 opacity-0 animate-fade-in-up-delay-2 backdrop-blur-sm bg-brand-navy/30 p-6 rounded-2xl max-w-2xl">
             <div>
               <p className="text-3xl font-bold text-white mb-1">4.9</p>
@@ -53,7 +56,7 @@ const Hero = ({ onOpenQuiz }: HeroProps) => {
               </div>
               <p className="text-xs text-slate-300">Avaliações no Google</p>
             </div>
-            
+
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <Scale className="w-6 h-6 text-brand-gold" />

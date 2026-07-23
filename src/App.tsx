@@ -63,10 +63,12 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 overflow-x-hidden relative">
       {/* Watermark Overlay */}
-      <div className="fixed inset-0 pointer-events-none z-[9999] flex items-center justify-center overflow-hidden">
-        <div className="transform -rotate-45 text-[10vw] md:text-[6vw] lg:text-[5vw] font-black text-black/15 select-none whitespace-nowrap drop-shadow-sm">
-          VERSÃO DE DEMONSTRAÇÃO
-        </div>
+      <div className="fixed inset-[-100%] pointer-events-none z-[9999] flex flex-wrap justify-center content-center gap-x-12 gap-y-16 opacity-[0.12] transform -rotate-[30deg] select-none overflow-hidden">
+        {Array.from({ length: 400 }).map((_, i) => (
+          <div key={i} className="text-2xl sm:text-3xl md:text-4xl font-black text-black whitespace-nowrap">
+            VERSÃO DE DEMONSTRAÇÃO
+          </div>
+        ))}
       </div>
 
       <Header />

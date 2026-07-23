@@ -10,9 +10,9 @@ const Hero = ({ onOpenQuiz }: HeroProps) => {
       {/* Background image */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-no-repeat"
-        style={{ 
+        style={{
           backgroundImage: "url('/assets/hero.jpg')",
-          backgroundPosition: "center 20%" 
+          backgroundPosition: "center 20%"
         }}
       >
         {/* Overlay gradient to ensure text readability */}
